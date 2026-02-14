@@ -1,8 +1,0 @@
-{
-  "name": "dancowcf-api",
-  "version": "1.0.0",
-  "type": "module",
-  "dependencies": {
-    "zencf": "^2.0.3"
-  }
-}
