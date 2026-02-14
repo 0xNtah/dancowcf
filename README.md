@@ -1,6 +1,6 @@
-# ZenCF API Wrapper
+# DancowCF API BYPASS CLOUDFLARE
 
-API wrapper untuk [zencf](https://www.npmjs.com/package/zencf) - Cloudflare Bypass Tool.
+API wrapper for [zencf](https://www.npmjs.com/package/zencf) - Cloudflare Bypass Tool.
 
 Deployed on [Vercel](https://vercel.com) - 100% FREE & PERMANENT!
 
