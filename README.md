@@ -1,4 +1,13 @@
-# DancowCF API BYPASS CLOUDFLARE
+# ZenCF API Wrapper
+
+API wrapper untuk [zencf](https://www.npmjs.com/package/zencf) - Cloudflare Bypass Tool.
+
+Deployed on [Vercel](https://vercel.com) - 100% FREE & PERMANENT!
+
+## 🙏 Credits
+
+- **[zencf](https://www.npmjs.com/package/zencf)** by [@ZenzzXD](https://github.com/zenzxz) - Cloudflare Turnstile & WAF bypass library
+- Deployed on [Vercel](https://vercel.com)
 
 ## 📡 API Endpoints
 
@@ -172,15 +181,21 @@ print(token)
 ## ⚙️ Features
 
 - ✅ **4 Endpoints** - Turnstile Min/Max, WAF Session, HTML Source
-- ✅ **100% Free** - Vercel Hobby plan (permanent)
+- ✅ **100% Free** - Vercel Hobby plan
 - ✅ **Fast** - Serverless functions
 - ✅ **Reliable** - Auto-scaling
-- ✅ **No Rate Limit** - From Vercel side (100 req/sec)
+- ✅ **No Rate Limit** - From Vercel side
+
+## 📄 License
+
+This project uses [zencf](https://www.npmjs.com/package/zencf) under ISC License.
 
 ## ⚠️ Disclaimer
 
 This API is for educational purposes only. Use responsibly and respect website terms of service.
 
 ## 🔗 Links
-- [GitHub Repository](https://github.com/0xNtah/dancowcf)
+
+- [zencf NPM Package](https://www.npmjs.com/package/zencf)
 - [Vercel Platform](https://vercel.com)
+- [GitHub Repository](https://github.com/0xNtah/dancowcf)
