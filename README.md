@@ -1,48 +1,77 @@
-DancowCF API
-A lightweight REST API for bypassing Cloudflare protection layers, deployed serverlessly on Vercel.
-Free to use. Free to deploy. No setup required.
-📡 API Endpoints
-Base URL: https://dancowcf.vercel.app
-POST /api/turnstile-min
-Solve Cloudflare Turnstile challenge (Fast mode)
-Request Body:
+# DamcowCF API BYPASS CLOUDFLARE
+
+## 📡 API Endpoints
+
+Base URL: `https://dancowcf.vercel.app`
+
+### 1. POST /api/turnstile-min
+Bypass Cloudflare Turnstile (Fast mode)
+
+**Request:**
+```json
 {
   "url": "https://example.com",
   "siteKey": "0x4AAAAAAA...",
-  "proxy": "host:port"
+  "proxy": "host:port" // optional
 }
-proxy is optional
-Response:
+```
+
+**Response:**
+```json
 {
   "token": "0.H55t0RJBnCwUiw..."
 }
-cURL Example:
+```
+
+**Example:**
+```bash
 curl -X POST https://dancowcf.vercel.app/api/turnstile-min \
   -H "Content-Type: application/json" \
   -d '{"url":"https://example.com","siteKey":"0x4AAAAAAA..."}'
-POST /api/turnstile-max
-Solve Cloudflare Turnstile challenge (Maximum protection mode)
-Request Body:
+```
+
+---
+
+### 2. POST /api/turnstile-max
+Bypass Cloudflare Turnstile (Maximum protection mode)
+
+**Request:**
+```json
 {
   "url": "https://example.com",
-  "proxy": "host:port"
+  "proxy": "host:port" // optional
 }
-Response:
+```
+
+**Response:**
+```json
 {
   "token": "0.H55t0RJBnCwUiw..."
 }
-cURL Example:
+```
+
+**Example:**
+```bash
 curl -X POST https://dancowcf.vercel.app/api/turnstile-max \
   -H "Content-Type: application/json" \
   -d '{"url":"https://example.com"}'
-POST /api/waf-session
-Bypass Cloudflare WAF and retrieve valid session cookies
-Request Body:
+```
+
+---
+
+### 3. POST /api/waf-session
+Bypass Cloudflare WAF and get session cookies
+
+**Request:**
+```json
 {
   "url": "https://example.com",
-  "proxy": "host:port"
+  "proxy": "host:port" // optional
 }
-Response:
+```
+
+**Response:**
+```json
 {
   "cookies": {
     "cf_clearance": "...",
@@ -52,32 +81,60 @@ Response:
     "User-Agent": "..."
   }
 }
-cURL Example:
+```
+
+**Example:**
+```bash
 curl -X POST https://dancowcf.vercel.app/api/waf-session \
   -H "Content-Type: application/json" \
   -d '{"url":"https://example.com"}'
-POST /api/source
-Retrieve the full HTML source of a Cloudflare-protected page
-Request Body:
+```
+
+---
+
+### 4. POST /api/source
+Get HTML source after bypassing Cloudflare
+
+**Request:**
+```json
 {
   "url": "https://example.com",
-  "proxy": "host:port"
+  "proxy": "host:port" // optional
 }
-Response:
+```
+
+**Response:**
+```json
 {
   "source": "<!DOCTYPE html>..."
 }
-cURL Example:
+```
+
+**Example:**
+```bash
 curl -X POST https://dancowcf.vercel.app/api/source \
   -H "Content-Type: application/json" \
   -d '{"url":"https://example.com"}'
-💻 Code Examples
-JavaScript / Node.js
+```
+
+---
+
+## 🚀 Deploy Your Own
+
+1. Fork this repository
+2. Connect to [Vercel](https://vercel.com)
+3. Click "Deploy"
+4. Done! Your own CF bypass API is ready!
+
+## 📊 Usage in Bot/Script
+
+### JavaScript/Node.js
+```javascript
 import fetch from 'node-fetch'
 
 const API_URL = 'https://dancowcf.vercel.app'
 
-// Solve Turnstile
+// Turnstile Min
 const { token } = await fetch(`${API_URL}/api/turnstile-min`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
@@ -87,7 +144,7 @@ const { token } = await fetch(`${API_URL}/api/turnstile-min`, {
   })
 }).then(r => r.json())
 
-// Get WAF Session
+// WAF Session
 const session = await fetch(`${API_URL}/api/waf-session`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
@@ -95,39 +152,35 @@ const session = await fetch(`${API_URL}/api/waf-session`, {
 }).then(r => r.json())
 
 console.log(session.cookies)
-Python
+```
+
+### Python
+```python
 import requests
 
 API_URL = 'https://dancowcf.vercel.app'
 
-# Solve Turnstile
+# Turnstile Min
 response = requests.post(f'{API_URL}/api/turnstile-min', json={
     'url': 'https://example.com',
     'siteKey': '0x4AAAAAAA...'
 })
 token = response.json()['token']
 print(token)
-🚀 Self-Host in Minutes
-Fork this repository
-Import the project into Vercel
-Click Deploy
-Your own instance is live — no configuration needed.
-⚙️ Features
-Feature
-Details
-Endpoints
-4 — Turnstile Min/Max, WAF Session, HTML Source
-Hosting
-Vercel Hobby (free, permanent)
-Performance
-Serverless, globally distributed
-Scalability
-Auto-scaling, no cold-start bottlenecks
-Rate Limit
-Up to 100 req/sec (Vercel-side)
-⚠️ Disclaimer
-This project is intended for educational and research purposes only.
-Users are solely responsible for ensuring their usage complies with applicable laws and the terms of service of any target website.
-🔗 Links
-Vercel Platform
-GitHub Repository
+```
+
+## ⚙️ Features
+
+- ✅ **4 Endpoints** - Turnstile Min/Max, WAF Session, HTML Source
+- ✅ **100% Free** - Vercel Hobby plan (permanent)
+- ✅ **Fast** - Serverless functions
+- ✅ **Reliable** - Auto-scaling
+- ✅ **No Rate Limit** - From Vercel side (100 req/sec)
+
+## ⚠️ Disclaimer
+
+This API is for educational purposes only. Use responsibly and respect website terms of service.
+
+## 🔗 Links
+
+- [Vercel Platform](https://vercel.com)
